@@ -63,8 +63,9 @@ interface ICoin {
   is_active: boolean;
   type: string;
 }
+interface ICoinsProps {}
 
-function Coins() {
+function Coins({}) {
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
   return (
     <Container>

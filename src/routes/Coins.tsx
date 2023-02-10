@@ -3,7 +3,6 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fetchCoins } from "../api";
-import { HomeBtn } from "../Components/HomeBtn";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -63,9 +62,8 @@ interface ICoin {
   is_active: boolean;
   type: string;
 }
-interface ICoinsProps {}
 
-function Coins({}) {
+function Coins() {
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
   return (
     <Container>
